@@ -1,47 +1,14 @@
-** Array Modifier Tool Unity 🛠️ ** 
-==========================
-*Array modifier tool for duplicating prefabs with customizable offsets and rotations in Unity*
+# Array Modifier for Unity
 
-A Unity tool for duplicating prefabs with customizable offsets and rotations, allowing easy creation of array patterns in your scene.
-
-* Prefab Duplication
-* Customizable Offsets
-* Rotation Control
-* Parenting Options
-* Auto Update
-
-**Preview 👀**
-----------
-💡**Objective**: Quickly generate array-based patterns of prefabs or game objects with fine-tuned control over Transform within Unity. 💡.
+A scene authoring tool that repeats a prefab with configurable spacing, rotation, scale, and parenting. Use it to lay out repeated props without placing each one by hand.
 
 https://github.com/user-attachments/assets/60c53039-b313-45b1-a6f0-b157d5d6a2fa
 
-**Usage 🪧**
-------------
-* Set the prefab or array modifier in the inspector.
-* Adjust the count, offset, rotation, and scale as needed.
-* Use "Apply" to spawn objects, or enable "Auto" to preview real-time changes.
-* Select between absolute or relative positioning for object placement.
-* Choose to parent objects either to the original object or its parent.
-  
+## Use the tool
 
-**Getting Started 📃**
---------------
-* Clone or download this repository.
-* Attach the ArrayModifier script to any GameObject in your scene in Unity.
-* Configure the array parameters in the Unity inspector.
+1. Copy [ArrayModifier.cs](ArrayModifier.cs) and the [Editor](Editor) folder under `Assets` in your project. Keep the custom inspector inside an `Editor` folder.
+2. Add **Array Modifier** to a GameObject and set **Type** to **Prefab**. Assign a prefab from the Project window.
+3. Set the count and choose absolute or relative offsets. Use **Auto** to preview the array and **Clear** to remove the preview.
+4. Click **Apply** to keep the generated objects. The inspector reparents them and removes the Array Modifier component from the source object.
 
-
-**Contributing 💪**
---------------
-Looking to contribute something to this project? Here's how you can help.
-
-If you believe something needs to be immediately fixed please open an issue and document the problem. 
-Fork this project and create a pull request with your solution to the problem. Thank you.
-
-**Reach Out? 🗣️**
-----------
-
-* Yashar Shaikh (yashrsk6@gmail.com)
-* [Github](https://github.com/YasharShaikh)
-* [Linkdin](https://www.linkedin.com/in/yashar-shaikh/)
+The custom inspector uses the legacy `PrefabUtility.GetPrefabParent` API for its **This** shortcut. Check API compatibility before importing the tool into a newer Unity project.
